@@ -1,24 +1,28 @@
-#=========================================================================================
-#
-#   dicewallet.py                                               [Python console script]
-#
-#       This simple utility facilitates using "Diceware" technology
-#       (http://world.std.com/~reinhold/diceware.html) to securely
-#       generate a Bitcoin private key using passphrases or raw hex
-#       strings derived from repeated rolls of an ordinary 6-sided
-#       die.  Passphrases with 64, 128, and 256 bits of entropy are
-#       supported.  Passphrase-hashing functionality is not included.
-#
-#   Language:   Python version 3.x
-#                   (Tested with 3.1.4 & 3.3.0 on MacOS X 10.6.8.)
-#
-#   Revision history:
-#       v0.1 (3/10/13) by Michael P. Frank
-#
-#   Licensing:
-#       GPLv3 (http://opensource.org/licenses/GPL-3.0)
-#
-#-----------------------------------------------------------------------------------------
+#|=========================================================================================
+#|
+#|   dicewallet.py                                           [Python console script]
+#|
+#|       This simple utility facilitates using "Diceware" technology
+#|       (http://world.std.com/~reinhold/diceware.html) to securely
+#|       generate a Bitcoin private key using passphrases or raw hex
+#|       strings derived from repeated rolls of an ordinary 6-sided
+#|       die.  Passphrases with 64, 128, and 256 bits of entropy are
+#|       supported.  Passphrase-hashing functionality is not included.
+#|
+#|   Language:   Python version 3.x
+#|                   (Tested with 3.1.4 & 3.3.0 on MacOS X 10.6.8,
+#|                      and 3.3.0 on Windows XP Professional 2002 SP3.
+#|
+#|   Revision history:
+#|       v0.1 (3/10/13) by Michael P. Frank - Initial working revision.
+#|       v0.1.1 (3/11/13) by M.P. Frank - Minor cleanup.
+#|          - Renamed 'map' dict to 'dicemap' to avoid collision w. reserved word.
+#|          - Fixed off-by-1 error in display of word indices in summary table.
+#|
+#|   Licensing:
+#|       GPLv3 (http://opensource.org/licenses/GPL-3.0)
+#|
+#|vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 print();
 print("========================================================================");
@@ -90,7 +94,7 @@ print("Reading Diceware word-list file [" + dict_filename + "]...");
 
 dict_file = open(dict_filename, "r");
 
-map = dict();   # Create empty hash table to store pentahex->diceword mapping
+dicemap = dict();   # Create empty hash table to store pentahex->diceword mapping
 nentries = 0;
 
 while 1:
@@ -103,7 +107,7 @@ while 1:
         continue;
     pentahex = words[0];
     diceword = words[1];
-    map[pentahex] = diceword;
+    dicemap[pentahex] = diceword;
     nentries = nentries + 1;
 
 print("I read", nentries, "dicewords from the word list.");
@@ -146,7 +150,7 @@ for chunki in range(nchunks):
         pentahexes[wordi:] = [entry];
         print("\t\tIts base-6 value is:", base6val);
         base6vals[wordi:] = [base6val];
-        diceword = map[entry];
+        diceword = dicemap[entry];
         print("\t\tIts diceword is: [" + diceword + "]");
         dicewords[wordi:] = [diceword];
         wordi = wordi + 1;
@@ -162,7 +166,7 @@ wordi = 0;
 for chunki in range(nchunks):
     print(str(chunki+1)+":");
     for word in range(5):
-        print("", wordi, pentahexes[wordi], base6vals[wordi], dicewords[wordi], sep='\t');
+        print("", (wordi+1), pentahexes[wordi], base6vals[wordi], dicewords[wordi], sep='\t');
         wordi = wordi + 1;
 
 print();
