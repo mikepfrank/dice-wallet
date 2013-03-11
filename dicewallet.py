@@ -19,6 +19,7 @@
 #|          - Renamed 'map' dict to 'dicemap' to avoid collision w. reserved word.
 #|          - Fixed off-by-1 error in display of word indices in summary table.
 #|       v0.1.1.1 (3/11/13) by MPF - Fixed a typo in intro text.
+#|       v0.1.2 (3/11/13) by MPF - Minor output formatting cleanup.
 #|
 #|   Licensing:
 #|       GPLv3 (http://opensource.org/licenses/GPL-3.0)
@@ -183,13 +184,13 @@ intval = int(base6val, 6);
 
 print();
 print("Your decimal pass code is:");
-print("\t", "{:,d}".format(intval));
+print("\t" + ("{:,d}".format(intval)));
 
 hexval = hex(intval)[2:].upper();
 
 print();
 print("Your hexadecimal pass code is:");
-print("\t", hexval);
+print("\t" + hexval);
 
 print();
 print("NOTE: The passphrase and the various passcodes above are equivalent");
