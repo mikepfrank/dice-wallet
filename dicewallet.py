@@ -18,6 +18,7 @@
 #|       v0.1.1 (3/11/13) by M.P. Frank - Minor cleanup.
 #|          - Renamed 'map' dict to 'dicemap' to avoid collision w. reserved word.
 #|          - Fixed off-by-1 error in display of word indices in summary table.
+#|       v0.1.1.1 (3/11/13) by MPF - Fixed a typo in intro text.
 #|
 #|   Licensing:
 #|       GPLv3 (http://opensource.org/licenses/GPL-3.0)
@@ -40,7 +41,7 @@ print("\t" + "The basic procedure is to use groups of 5 die rolls (\"pentahexes\
 print("\t" + "to select words from the 7,776-word Diceware dictionary, and string");
 print("\t" + "these together to form a passphrase that is relatively easy to write");
 print("\t" + "down, memorize, or convey verbally.  This can then be used with your");
-print("\t" + "favorite brain-wallet address generator (we recommend downloaning the");
+print("\t" + "favorite brain-wallet address generator (we recommend downloading the");
 print("\t" + "one at BitAddress.org and running it offline) to generate your private");
 print("\t" + "key, or alternatively, in the case of a passphrase that already has");
 print("\t" + "256 bits of entropy, the random data can be used as the key directly.");
