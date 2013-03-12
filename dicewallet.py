@@ -29,6 +29,8 @@
 #|
 #|vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+import time;
+
 print();
 print("========================================================================");
 print("DiceWallet: A Diceware-based Bitcoin wallet generator, v0.1 by M. Frank.");
@@ -118,7 +120,8 @@ while 1:
 print("I read", nentries, "dicewords from the word list.");
 if nentries != 7776:
     print("Something went wrong; the word list should contain exactly 7776 entries.");
-    print("Quitting...");
+    print("Quitting in 5 seconds...");
+    time.sleep(5);
     exit();
 
 print();
