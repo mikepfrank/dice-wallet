@@ -20,6 +20,9 @@
 #|          - Fixed off-by-1 error in display of word indices in summary table.
 #|       v0.1.1.1 (3/11/13) by MPF - Fixed a typo in intro text.
 #|       v0.1.2 (3/11/13) by MPF - Minor output formatting cleanup.
+#|          - Removed extra undesired space before decimal and hex codewords.
+#|       v0.1.3 (3/11/13) by MPF - Slight change in presentation of size options.
+#|          - Added "-->" arrow to make it clearer that passphrase is derived from die rolls.
 #|
 #|   Licensing:
 #|       GPLv3 (http://opensource.org/licenses/GPL-3.0)
@@ -50,9 +53,9 @@ print();
 print("How many bits' worth of passphrase entropy do you want?  (More = more secure.)");
 print();
 print("Your choices are:");
-print("\t" + "1. 64 bits (25 die rolls, 5-word passphrase)");
-print("\t" + "2. 128 bits (50 die rolls, 10-word passphrase)");
-print("\t" + "3. 256 bits (100 die rolls, 20-word passphrase)");
+print("\t" + "1. 64 bits (25 die rolls --> 5-word passphrase)");
+print("\t" + "2. 128 bits (50 die rolls --> 10-word passphrase)");
+print("\t" + "3. 256 bits (100 die rolls --> 20-word passphrase)");
 print();
 print("(NOTE: If you choose option 3, you'll have the option of ignoring the passphrase");
 print("and generating a 256-bit private key directly.)");
