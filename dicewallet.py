@@ -23,6 +23,8 @@
 #|          - Removed extra undesired space before decimal and hex codewords.
 #|       v0.1.3 (3/11/13) by MPF - Slight change in presentation of size options.
 #|          - Added "-->" arrow to make it clearer that passphrase is derived from die rolls.
+#|       v0.1.4 (3/11/13) by MPF - Slight improvement to error handling.
+#|          - Added 5-second delay before exiting if word list is wrong length.
 #|
 #|   Licensing:
 #|       GPLv3 (http://opensource.org/licenses/GPL-3.0)
